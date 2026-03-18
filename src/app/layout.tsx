@@ -13,7 +13,7 @@ const inter = Inter({
 // Site-wide Metadata (Next.js Metadata API)
 // ─────────────────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  metadataBase: new URL("https://shashidhar-portfolio.netlify.app"),
+  metadataBase: new URL("https://ralphvescoto.netlify.app"),
 
   title: {
     default: "Ralph Escoto | Full Stack AI Engineer",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     "Software Engineer Portfolio India",
   ],
 
-  authors: [{ name: "Ralph Escoto", url: "https://shashidhar-portfolio.netlify.app" }],
+  authors: [{ name: "Ralph Escoto", url: "https://ralphvescoto.netlify.app" }],
   creator: "Ralph Escoto",
   publisher: "Ralph Escoto",
 
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     title: "Ralph Escoto | Full Stack Developer Portfolio",
     description:
       "Software Engineer II with 4+ years of experience. React, Next.js, Node.js, TypeScript. Frontend Lead for enterprise Warehouse Management System. Open source contributor.",
-    url: "https://shashidhar-portfolio.netlify.app",
+    url: "https://ralphvescoto.netlify.app",
     siteName: "Ralph Escoto Portfolio",
     locale: "en_US",
     images: [

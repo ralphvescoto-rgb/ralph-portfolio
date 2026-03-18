@@ -3,7 +3,7 @@
 // Follows schema.org specifications for Person, WebSite, and CreativeWork
 // ─────────────────────────────────────────────────────────────────────────────
 
-const BASE_URL = "https://shashidhar-portfolio.netlify.app";
+const BASE_URL = "https://ralphvescoto.netlify.app";
 
 // ── 1. Person Schema ───────────────────────────────────────────────────────────
 export const personSchema = {
@@ -18,7 +18,7 @@ export const personSchema = {
         "Full Stack Developer with 4+ years of experience specializing in MERN stack. Frontend Lead for enterprise Warehouse Management Systems. Open source contributor publishing tools on NPM.",
     url: BASE_URL,
     email: "shashidharnaik8@gmail.com",
-    telephone: "+63-9936944995",
+    telephone: "+63-9269663658",
     image: `${BASE_URL}/portfolio_hero_section.png`,
     address: {
         "@type": "PostalAddress",
