@@ -18,7 +18,7 @@ const Footer = () => {
                     <div className="flex items-center gap-2">
                         <Code2 className="text-violet-500 w-5 h-5" aria-hidden="true" />
                         <span className="font-bold text-slate-300">
-                            Ralph<span className="text-violet-500">.</span>
+                            Ralph Escoto
                         </span>
                     </div>
                     <div className='text-slate-600'>Software Engineer</div>

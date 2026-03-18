@@ -34,7 +34,7 @@ const Header = () => {
             <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
                 <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
                     <Code2 className="text-violet-500 w-8 h-8" />
-                    <span className="text-xl font-bold tracking-tight">Ralph<span className="text-violet-500">.</span></span>
+                    <span className="text-xl font-bold tracking-tight">Ralph Escoto</span>
                 </div>
 
                 {/* Desktop Nav */}

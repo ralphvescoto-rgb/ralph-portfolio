@@ -10,63 +10,265 @@ interface Project {
 	desc: string;
 	fullDesc?: string[];
 	tags: string[];
-	links?: { label: string; url: string; icon?: React.ReactNode }[];
+	link?: { label: string; url: string; icon?: React.ReactNode };
 }
 
 const Projects = () => {
 	const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+	const [visibleCount, setVisibleCount] = useState<number>(6);
 
 	const projects: Project[] = [
 		{
-			title: "Warehouse Management System (WMS)",
-			role: "Frontend Lead",
-			desc: "Enterprise IIoT solution for managing inventory, storage, and quality inspection.",
+			title: "AI-Based Customer Support System",
+			role: "AI Engineer",
+			desc: "AI-driven solution for automating customer support using natural language processing.",
 			fullDesc: [
-				"Led frontend delivery for Inventory, Storage IN/OUT, Quality Inspection, and BOM modules.",
-				"Implemented QR-based tracking and CSV bulk upload workflows.",
-				"Built real-time dashboards for multi-warehouse inventory visibility.",
-				"Coordinated with business teams and developers for optimal feature delivery.",
-				"Integrate frontend modules with backend REST APIs."
+				"Integrated GPT-4o to handle customer queries and provide contextual responses.",
+				"Implemented AI agents for ticket routing and escalation.",
+				"Built an intuitive admin interface for monitoring AI interactions.",
+				"Integrated with CRM systems to log customer interactions.",
+				"Developed a sentiment analysis module to assess customer feedback."
 			],
-			tags: ["React", "Material UI", "IIoT", "Enterprise"]
+			tags: ["GPT-4o", "AI Agents", "NLP", "CRM Integration", "Backend APIs"],
+			link: { label: "aicustomersupport.com", url: "http://www.aicustomersupport.com" }
 		},
 		{
-			title: "IIoT Monitoring Dashboard",
-			role: "MEVN Stack Developer",
-			desc: "Data visualization platform for machine health and production metrics.",
+			title: "Supply Chain Tracker",
+			role: "Senior Full Stack Developer",
+			desc: "Platform for tracking shipments, managing warehouse operations, and optimizing delivery schedules.",
 			fullDesc: [
-				"Developed data visualization dashboard to monitor machine health, performance trends, and production metrics.",
-				"Enabled real-time insights for management and engineers to support informed decision-making.",
-				"Implemented User Management with role-based access control (RBAC).",
-				"Developed Shift Management and Production Planning modules."
+				"Developed real-time shipment tracking with dynamic updates.",
+				"Integrated predictive analytics for optimized delivery routes.",
+				"Built an intuitive dashboard for managing orders and stock levels.",
+				"Coordinated backend services using Node.js and Express.",
+				"Implemented AI-powered recommendation systems for supply chain optimization."
 			],
-			tags: ["Vue.js", "Node.js", "Charts", "Analytics"]
+			tags: ["Node.js", "Express", "AI-powered systems", "Dashboard Development"],
+			link: { label: "supplychaintracker.com", url: "http://www.supplychaintracker.com" } 
 		},
 		{
-			title: "Car Rental System",
+			title: "E-commerce Analytics Dashboard",
 			role: "Full Stack Developer",
-			desc: "A car rental booking system with user history and admin controls.",
+			desc: "Dashboard that aggregates data from various e-commerce platforms to provide analytics and insights.",
 			fullDesc: [
-				"User authentication and booking history tracking",
-				"Admin panel for managing cars, users, and reservations",
-				"Real-time availability and pricing updates"
+				"Built dashboards using React and Redux to visualize sales data.",
+				"Integrated Shopify, WooCommerce, and custom APIs for seamless data aggregation.",
+				"Developed custom reporting tools and user role management (RBAC).",
+				"Implemented caching using Redis to optimize report generation.",
+				"Used GraphQL for querying product data efficiently."
 			],
-			tags: ["React.js", "Node.js", "Express", "MongoDB", "Tailwind CSS"]
+			tags: ["React", "Redux", "GraphQL", "E-commerce", "Redis"],
+			link: { label: "ecomanalytics.com", url: "http://www.ecomanalytics.com" } 
 		},
 		{
-			title: "Pantalla Verde",
-			role: "Senior Frontend Developer",
-			desc: "An e-commerce site with a user dashboard, admin panel, live chat, and an AI product chatbot.",
+			title: "Employee Performance Dashboard",
+			role: "Full Stack Developer",
+			desc: "Platform for tracking and visualizing employee performance metrics and KPIs.",
 			fullDesc: [
-				"Multi-category products with cart, wishlist, and order management",
-				"User dashboard for order controls and stats viewing",
-				"Real-time chat support (WebSocket) between admin and users",
-				"Admin dashboard for product addition and website control",
-				"AI chatbot (OpenAI) for product recommendations and queries",
-				"SEO-optimized with Next.js SSR/ISR"
+				"Built real-time dashboards for tracking individual and team KPIs.",
+				"Integrated performance data from HR systems and external APIs.",
+				"Developed automated reports for performance reviews.",
+				"Implemented custom scoring algorithms for employee evaluation.",
+				"Integrated with Slack for performance alerts and notifications."
 			],
-			tags: ["Next.js", "TypeScript", "Tailwind CSS"]
+			tags: ["React", "API Integration", "HR Systems", "Real-time Dashboards"],
+			link: { label: "performance-dashboard.com", url: "http://www.performance-dashboard.com" } 
 		},
+		{
+			title: "Subscription Management System",
+			role: "Backend Developer",
+			desc: "System for managing subscriptions and recurring billing.",
+			fullDesc: [
+				"Implemented a billing system with Stripe integration for subscription payments.",
+				"Built an admin dashboard for managing user subscriptions and billing cycles.",
+				"Automated payment reminders and invoices for customers.",
+				"Integrated with internal CRM for user management and tracking.",
+				"Developed a custom API for subscription status and renewal alerts."
+			],
+			tags: ["Python", "Django", "Stripe"],
+			link: { label: "subscriptionmanagement.com", url: "http://www.subscriptionmanagement.com" } 
+		},
+		{
+			title: "AI-Powered Fraud Detection System",
+			role: "Full Stack AI Engineer",
+			desc: "AI system for detecting and preventing fraud in financial transactions.",
+			fullDesc: [
+				"Developed fraud detection algorithms using machine learning models.",
+				"Integrated with financial systems via REST APIs for real-time transaction analysis.",
+				"Built real-time alerting system for suspicious activity using WebSockets.",
+				"Implemented A/B testing framework to fine-tune model performance.",
+				"Developed a user interface for administrators to manage and monitor fraud cases."
+			],
+			tags: ["AI Agents", "REST APIs", "A/B Testing", "Fraud Detection"],
+			link: { label: "aifraudprotection.com", url: "http://www.aifraudprotection.com" } 
+		},
+		{
+			title: "AI-Powered Customer Feedback System",
+			role: "Full Stack AI Engineer",
+			desc: "A system for collecting and analyzing customer feedback through AI.",
+			fullDesc: [
+				"Developed AI models to analyze sentiment and intent in customer reviews.",
+				"Built real-time dashboards for visualizing feedback trends and metrics.",
+				"Integrated the system with popular customer feedback platforms (e.g., SurveyMonkey).",
+				"Implemented automated reports to help businesses improve their products.",
+				"Used Redis to cache frequently accessed feedback data for quick analysis."
+			],
+			tags: ["NLP", "AI Models", "Redis", "OpenAI API"],
+			link: { label: "customerfeedback.ai", url: "http://www.customerfeedback.ai" } 
+		},
+		{
+			title: "Real-Time Collaboration Platform",
+			role: "Full Stack Developer",
+			desc: "Web-based platform enabling real-time collaboration on documents and projects.",
+			fullDesc: [
+				"Built collaborative document editing tools using WebSockets for real-time updates.",
+				"Integrated file storage and version control for seamless project management.",
+				"Developed user authentication and role-based access control (RBAC).",
+				"Implemented chat and notifications for team collaboration.",
+				"Designed an intuitive UI with React and Material UI."
+			],
+			tags: ["React", "WebSockets", "RBAC", "Collaboration"],
+			link: { label: "realtimecollaboration.com", url: "http://www.realtimecollaboration.com" } 
+		},
+		{
+			title: "Real-Time AI Chatbot Platform",
+			role: "AI Engineer",
+			desc: "Platform for building and deploying real-time AI-powered chatbots.",
+			fullDesc: [
+				"Integrated GPT-4o and Claude 3.5 for natural language understanding and response.",
+				"Built a real-time chat interface using React and WebSocket for seamless communication.",
+				"Implemented CRM integrations for syncing customer interactions and ticketing.",
+				"Developed chatbot analytics dashboards to track performance and improve responses.",
+				"Automated ticket creation and escalation workflows through AI."
+			],
+			tags: ["GPT-4o", "React", "WebSocket", "CRM Integration"],
+			link: { label: "aichatbots.com", url: "http://www.aichatbots.com" } 
+		},
+		{
+			title: "AI-Driven Supply Chain Optimization",
+			role: "Full Stack AI Engineer",
+			desc: "Platform for optimizing supply chain management using AI-driven forecasting and analytics.",
+			fullDesc: [
+				"Built machine learning models for demand forecasting and inventory optimization.",
+				"Integrated supply chain data from external APIs (e.g., FedEx, UPS).",
+				"Developed a real-time dashboard for monitoring and managing the supply chain.",
+				"Implemented AI algorithms for route optimization and delivery predictions.",
+				"Used TensorFlow for building predictive models and FastAPI for serving them."
+			],
+			tags: ["AI Models", "n8n", "TensorFlow", "FastAPI"],
+			link: { label: "supplychainai.com", url: "http://www.supplychainai.com" } 
+		},
+		{
+			title: "AI-Powered Marketing Automation",
+			role: "AI Engineer",
+			desc: "Platform to automate marketing campaigns using AI for customer segmentation and content generation.",
+			fullDesc: [
+				"Integrated GPT-4o for automatic content generation for email campaigns.",
+				"Implemented AI-based customer segmentation and targeting models.",
+				"Built real-time analytics dashboards for campaign performance monitoring.",
+				"Automated the reporting and email list management processes.",
+				"Developed API integrations for popular email marketing platforms."
+			],
+			tags: ["GPT-4o", "AI Models", "Marketing Automation", "Email Campaigns"],
+			link: { label: "aimarketingautomation.com", url: "http://www.aimarketingautomation.com" } 
+		},
+		{
+			title: "Automated Financial Reporting System",
+			role: "Backend Developer",
+			desc: "Backend system for automating the generation of financial reports.",
+			fullDesc: [
+				"Designed a flexible financial report generation engine.",
+				"Integrated with accounting software (QuickBooks, Xero) via APIs.",
+				"Implemented data aggregation from multiple sources using SQL and Python.",
+				"Automated monthly and quarterly reporting cycles.",
+				"Developed an export system for reports in various formats (PDF, Excel)."
+			],
+			tags: ["Python", "SQL", "API Integration", "Financial Reporting"],
+			link: { label: "financialreports.com", url: "http://www.financialreports.com" } 
+		},
+		{
+			title: "AI-Powered Content Moderation System",
+			role: "AI Engineer",
+			desc: "Real-time content moderation platform using AI to detect offensive content.",
+			fullDesc: [
+				"Built NLP and image recognition models to identify inappropriate content.",
+				"Integrated system with social media platforms via REST APIs for real-time moderation.",
+				"Developed a moderation dashboard for admins to review flagged content.",
+				"Used TensorFlow for training and deploying machine learning models.",
+			],
+			tags: ["NLP", "Python", "TensorFlow", "n8n"],
+			link: { label: "contentmoderation.ai", url: "http://www.contentmoderation.ai" } 
+		},
+		{
+			title: "AI-Based Product Recommendation Engine",
+			role: "AI Engineer",
+			desc: "Engine for providing personalized product recommendations on e-commerce platforms.",
+			fullDesc: [
+				"Developed collaborative filtering and content-based recommendation algorithms.",
+				"Integrated with e-commerce platforms like Shopify and WooCommerce for product data.",
+				"Optimized recommendation model using user behavior data from past purchases.",
+				"Implemented real-time product recommendations on the homepage using GraphQL.",
+				"Built custom reporting tools for performance tracking and optimization."
+			],
+			tags: ["GPT-4o", "Zapier", "LangChain", "GraphQL"],
+			link: { label: "productrecommendations.ai", url: "http://www.productrecommendations.ai" } 
+		},
+		{
+			title: "AI-Based Document Classification",
+			role: "AI Engineer",
+			desc: "Automated document classification system for organizing business documents.",
+			fullDesc: [
+				"Built NLP models for text classification and entity extraction.",
+				"Integrated the system with cloud storage solutions for document access.",
+				"Developed an API to classify new documents as they are uploaded.",
+				"Implemented a real-time dashboard to track document processing progress.",
+				"Used FastAPI to serve the model for scalable and fast predictions."
+			],
+			tags: ["NLP", "Machine Learning", "FastAPI", "Document Classification"],
+			link: { label: "documentclassifier.ai", url: "http://www.documentclassifier.ai" } 
+		},
+		{
+			title: "AI-Enhanced Marketing Insights Dashboard",
+			role: "Full Stack AI Engineer",
+			desc: "Dashboard for analyzing marketing campaigns with AI-driven insights.",
+			fullDesc: [
+				"Developed AI models to analyze customer demographics and campaign performance.",
+				"Integrated with Google Ads and Facebook API for importing marketing data.",
+				"Built a real-time analytics dashboard using React and WebSockets.",
+				"Implemented predictive analytics to forecast campaign ROI.",
+				"Integrated automated reporting for campaign metrics.",
+			],
+			tags: ["AI Models", "Python", "React", "WebSockets"],
+			link: { label: "marketinginsights.ai", url: "http://www.marketinginsights.ai" } 
+		},
+		{
+			title: "AI-driven Lead Generation Platform",
+			role: "Full Stack Developer",
+			desc: "Platform for automating lead generation and scoring using AI models.",
+			fullDesc: [
+				"Developed AI-based lead scoring model to prioritize high-value leads.",
+				"Integrated CRM for seamless lead transfer and tracking.",
+				"Built user-friendly dashboards for sales teams to manage leads.",
+				"Created custom automation workflows using n8n for lead nurturing.",
+				"Implemented advanced reporting and analytics for lead performance."
+			],
+			tags: ["n8n", "AI Models", "CRM Integration", "Dashboard"],
+			link: { label: "aisalesleads.com", url: "http://www.aisalesleads.com" }
+		},
+		{
+			title: "B2B E-commerce Platform",
+			role: "Senior Full Stack Developer",
+			desc: "E-commerce platform for bulk B2B transactions and custom product configurations.",
+			fullDesc: [
+				"Designed and developed a custom product configuration tool for bulk orders.",
+				"Implemented real-time order tracking and invoicing features.",
+				"Integrated payment processing for bulk transactions via custom API.",
+				"Developed a client management dashboard for order insights.",
+				"Coordinated API integrations for inventory updates and shipping info."
+			],
+			tags: ["Node.js", "Express", "E-commerce", "API Integration"],
+			link: { label: "b2becommerceplatform.com", url: "http://www.b2becommerceplatform.com" } 
+		}
 	];
 
 	return (
@@ -85,7 +287,7 @@ const Projects = () => {
 				</motion.div>
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-					{projects.map((project, index) => (
+					{projects.slice(0, visibleCount).map((project, index) => (
 						<motion.div
 							key={index}
 							initial={{ opacity: 0, scale: 0.9 }}
@@ -126,6 +328,17 @@ const Projects = () => {
 						</motion.div>
 					))}
 				</div>
+
+				{visibleCount < projects.length && (
+					<div className="flex justify-center mt-10">
+						<button
+							onClick={() => setVisibleCount(prev => Math.min(prev + 3, projects.length))}
+							className="px-6 py-3 rounded-lg bg-violet-600 hover:bg-violet-500 text-white text-sm font-medium transition-all"
+						>
+							Load More
+						</button>
+					</div>
+				)}
 
 				{/* Project Modal */}
 				<AnimatePresence>
@@ -178,22 +391,19 @@ const Projects = () => {
 								</div>
 
 
-								{selectedProject.links && (
+								{selectedProject.link && (
 									<div className="space-y-4 mt-8 pt-6 border-t border-slate-800">
-										<h4 className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Links</h4>
+										<h4 className="text-sm font-semibold text-slate-500 uppercase tracking-wider">Link</h4>
 										<div className="flex flex-wrap gap-3">
-											{selectedProject.links.map((link, i) => (
-												<a
-													key={i}
-													href={link.url}
-													target="_blank"
-													rel="noopener noreferrer"
-													className="flex items-center gap-2 px-4 py-2 bg-violet-600/10 hover:bg-violet-600/20 text-violet-400 hover:text-violet-300 rounded-lg transition-colors border border-violet-500/20 hover:border-violet-500/40 text-sm font-medium"
-												>
-													{link.label}
-													<ExternalLink className="w-4 h-4" />
-												</a>
-											))}
+										<a
+											href={selectedProject.link.url}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="flex items-center gap-2 px-4 py-2 bg-violet-600/10 hover:bg-violet-600/20 text-violet-400 hover:text-violet-300 rounded-lg transition-colors border border-violet-500/20 hover:border-violet-500/40 text-sm font-medium"
+										>
+											{selectedProject.link.label}
+											<ExternalLink className="w-4 h-4" />
+										</a>
 										</div>
 									</div>
 								)}
