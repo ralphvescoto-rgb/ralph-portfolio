@@ -66,43 +66,20 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="relative hidden md:block"
                 >
-                    {/* Abstract Code Visual or 3D Element Placeholder */}
-                    <div className="w-full h-125 border border-slate-800 bg-slate-900/50 rounded-2xl relative overflow-hidden group">
-                        <div className="absolute inset-0 bg-linear-to-br from-violet-500/10 to-transparent opacity-50" />
-
-                        {/* Mock Code Editor Look */}
-                        <div className="flex items-center gap-2 p-4 border-b border-slate-800">
-                            <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                            <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                            <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                            <div className="ml-4 text-xs text-slate-500 font-mono">Developer.tsx</div>
-                        </div>
-
-                        <div className="p-6 font-mono text-sm space-y-4 text-slate-400">
-                            <div>
-                                <span className="text-violet-400">const</span> <span className="text-blue-400">developer</span> = <span className="text-yellow-400">{"{"}</span>
-                            </div>
-                            <div className="pl-6">
-                                <span className="text-slate-500">name:</span> <span className="text-green-400">'Ralph Escoto'</span>,
-                            </div>
-                            <div className="pl-6">
-                                <span className="text-slate-500">role:</span> <span className="text-green-400">'Full Stack AI Engineer | AI Engineer'</span>,
-                            </div>
-                            <div className="pl-6">
-                                <span className="text-slate-500">experience:</span> <span className="text-orange-400">7+</span>,
-                            </div>
-                            <div className="pl-6">
-                                <span className="text-slate-500">skills:</span> <span className="text-yellow-400">['React','TypeScript', 'Next.js' 'Node.Js/Express', "Python", 'FastAPI', 'Prompt Engineering', 'OpenAI API', 'n8n', 'GPT-4o', 'Claude 3.5/4', 'MongoDB','PostgreSQL']</span>,
-                            </div>
-                            <div className="pl-6">
-                                <span className="text-slate-500">currentFocus:</span> <span className="text-green-400">'Enterprise Web Applications'</span>
-                            </div>
-                            <div>
-                                <span className="text-yellow-400">{"}"}</span>;
-                            </div>
-
-                            <div className="pt-4 animate-pulse">
-                                <span className="text-violet-400">developer</span>.<span className="text-blue-400">buildAwesomeThings</span>();
+                    <div className="flex justify-center order-1 lg:order-2">
+                        <div className="relative">
+                            {/* Main Image Container */}
+                            <div className="relative z-10 group">
+                                <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-linear-to-br from-primary/10 to-secondary/10 backdrop-blur-sm border-4 border-background/50 shadow-2xl">
+                                    <ImageWithFallback
+                                        src="/images/Ralph.png"
+                                        alt="Ralph Full Stack AI Engineer"
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                    
+                                    {/* Overlay linear */}
+                                    <div className="absolute inset-0 bg-linear-to-t from-primary/20 via-transparent to-transparent"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
